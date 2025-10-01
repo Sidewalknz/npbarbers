@@ -1,0 +1,23 @@
+.svg {
+  display: block;
+  width: 100%;
+
+  /* Always above the previous section background */
+  position: relative;
+  z-index: 1;
+
+  /* Default seam + overlap values */
+  --divider-seam: 2px;     /* hides tiny 1px gap between sections */
+  --divider-overlap: 80%;  /* amount of upward pull (relative to divider height) */
+
+  /* Pull upward to overlap the section above */
+  transform:
+    translateY(calc(-1 * var(--divider-seam)))
+    translateY(calc(-1 * var(--divider-overlap)));
+}
+
+.bottom {
+  /* At the bottom of a section: only nudge for seam */
+  --divider-overlap: 0%;
+  transform: translateY(var(--divider-seam));
+}
