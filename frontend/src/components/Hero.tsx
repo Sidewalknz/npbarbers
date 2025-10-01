@@ -1,3 +1,4 @@
+// Hero.tsx / Hero.jsx
 "use client";
 
 import styles from "./Hero.module.css";
@@ -7,7 +8,6 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.inner}>
         <div className={styles.left} aria-hidden="true">
-          <div className={styles.wood} />
           <div
             className={styles.carvedLogo}
             role="img"

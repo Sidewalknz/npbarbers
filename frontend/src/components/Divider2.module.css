@@ -1,0 +1,65 @@
+/* ========= Barber-pole Divider (full width, static) =========
+   Edit values below to theme site-wide.
+   ----------------------------------------------------------------------- */
+
+.pole {
+  /* Size */
+  --divider-height: 50px;
+
+  /* Stripe styling */
+  --stripe-angle: 45deg;
+  --stripe-step: 12px;         /* thickness of each color band */
+  --stripe-opacity: 0.1;       /* 0…1, matches your navbar vibe */
+
+  /* Frame / glass */
+  --frame-border: 1px solid rgba(210, 180, 140, 0.65);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+  width: 100%;
+  height: var(--divider-height);
+
+  border: var(--frame-border);
+  background: var(--glass-bg);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Static diagonal stripes (red → white → blue → white → repeat) */
+.pole::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: repeating-linear-gradient(
+    var(--stripe-angle),
+    rgba(220, 20, 60, var(--stripe-opacity)) 0,
+    rgba(220, 20, 60, var(--stripe-opacity)) var(--stripe-step),
+    rgba(255, 255, 255, var(--stripe-opacity)) var(--stripe-step),
+    rgba(255, 255, 255, var(--stripe-opacity)) calc(var(--stripe-step) * 2),
+    rgba(0, 84, 168, var(--stripe-opacity)) calc(var(--stripe-step) * 2),
+    rgba(0, 84, 168, var(--stripe-opacity)) calc(var(--stripe-step) * 3),
+    rgba(255, 255, 255, var(--stripe-opacity)) calc(var(--stripe-step) * 3),
+    rgba(255, 255, 255, var(--stripe-opacity)) calc(var(--stripe-step) * 4)
+  );
+
+  background-repeat: repeat;
+  pointer-events: none;
+}
+
+/* Subtle top highlight, like your navbar */
+.pole::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.35), transparent 35%);
+  pointer-events: none;
+}
+
+/* Fallback if blur unsupported */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .pole { background: #fffffff0; }
+}
