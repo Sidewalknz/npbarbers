@@ -1,0 +1,87 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 90vh;
+  position: relative;
+  z-index: 1;
+}
+
+.left {
+  background:
+    linear-gradient(rgba(255, 224, 180, 0.65), rgba(255, 224, 180, 0.65)), /* warm light overlay */
+    url("/textures/wood.png"); /* wood texture */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.logo {
+  display: block;
+  width: min(320px, 60%);
+  height: auto;
+}
+
+.right {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.content {
+  max-width: 700px;
+  width: 100%;
+}
+
+.title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookButton {
+  background: #1f2937;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.06s ease-in-out, box-shadow 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.bookButton:hover {
+  background: #111827;
+}
+
+.bookButton:active {
+  transform: translateY(1px);
+}
+
+.bookButton:focus-visible {
+  outline: 3px solid #111827;
+  outline-offset: 2px;
+}
+
+@media (max-width: 840px) {
+  .hero { grid-template-columns: 1fr; }
+  .left { padding: 2.5rem 1.5rem; }
+  .right { padding: 1.5rem; }
+  .logo { width: min(260px, 70%); }
+}
