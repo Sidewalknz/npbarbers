@@ -155,17 +155,3 @@
 .cta:hover { background: #c5a028; } /* darker gold */
 .cta:active { transform: translateY(1px); }
 
-/* ====== Responsive ====== */
-@media (max-width: 720px) {
-  .cap { width: 64px; height: 64px; }
-  .capLeft { left: -14px; }
-  .capRight { right: -14px; }
-  .pole { padding: 0.6rem 1rem; gap: 0.5rem; }
-  .brandText { display: none; }
-  .iconLink { width: 32px; height: 32px; }
-  .iconLink img { width: 16px; height: 16px; }
-}
-
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .pole { background: #fffffff0; }
-}
