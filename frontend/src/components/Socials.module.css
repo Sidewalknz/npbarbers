@@ -1,0 +1,58 @@
+.socials {
+  position: relative;
+  padding: 6rem 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 800px;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  margin-bottom: 40px;
+}
+
+.curvedTitle {
+  width: 100%;
+  height: 120px;
+}
+
+.curvedTitle text {
+  font-family: var(--font-baskervville, serif);
+  font-weight: 800;
+  font-size: 2.2rem;
+  fill: #111827;
+  letter-spacing: 0.05em;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.iconLink:hover {
+  background: #e5e7eb;
+  transform: scale(1.05);
+}
